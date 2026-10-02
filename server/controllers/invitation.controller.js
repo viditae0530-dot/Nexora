@@ -9,7 +9,7 @@ import Notification from "../models/Notification.js";
 
 export const createInvitation = asyncHandler(async (req, res) => {
   const workspace = await Workspace.findById(req.params.id);
-  if (!workspace) throw new ApiError(404, "Workspace not found.");
+ if (!workspace) throw new ApiError(404, "Workspace not found.");
 
   
   const requester = workspace.members.find(
